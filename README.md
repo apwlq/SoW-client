@@ -8,18 +8,20 @@ UDP 멀티캐스트 연결을 통해 서버에서 클라이언트로 화면 데�
 현재 개발 중인 상태로, 버그나 문제가 있을 수 있으니 GitHub Issues에 보고해 주시기 바랍니다.
 
 ## 사용 방법
+0. Java를 설치해야 합니다.([Temurin Jre 21 권장](https://adoptium.net/temurin/releases/?os=any&arch=x64&package=jre))
 1. 서버 애플리케이션을 실행합니다.
 2. 클라이언트 애플리케이션을 실행합니다.
 3. 서버 애플리케이션의 IP 주소를 클라이언트 애플리케이션에 입력합니다.
 4. 연결 버튼을 클릭하여 서버 애플리케이션과 연결합니다.
 
 ## [Updater.jar](https://github.com/apwlq/Updater) 에서 사용 방법
+`config.yml` 파일
 ```yaml
-github_repo: https://github.com/apwlq/SoW-server.git
+github_repo: https://github.com/apwlq/SoW-client.git #변경 금지
 auto_update: true
-start_command: java -jar runner.jar
-version_command: java -jar runner.jar --version
-download_file: sow_server.jar
+start_command: java -jar runner.jar #번경 금지
+version_command: java -jar runner.jar --version #변경 금지
+download_file: sow_client.jar #변경 금지
 save_logs: false
 ```
 
