@@ -1,0 +1,36 @@
+name: Build and Release
+
+on:
+  push:
+    tags:
+      - 'v*.*'
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          java-version: '21'  # Adjust to the version you need
+          distribution: 'temurin'
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x ./gradlew
+
+      - name: Build with Gradle
+        run: ./gradlew shadowJar
+
+      - name: Create Release and Upload Asset
+        uses: marvinpinto/action-automatic-releases@latest
+        with:
+          title: ${{ github.ref_name }}  # Use the tag name as the release title
+          automatic_release_tag: ${{ github.ref_name }}  # Use the tag name only
+          repo_token: ${{ secrets.TOKEN }}  # Use custom token
+          files: |
+            build/libs/*.jar
+          prerelease: false
