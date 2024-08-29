@@ -56,7 +56,7 @@ fun main(args: Array<String>) {
     val mousePort = 4447
     val bufferSize = 65000
     val defaultImagePath = "./splash.png"
-    val imageUpdateTimeout = 10_000L // 10 seconds timeout
+    val imageUpdateTimeout = 3600_000L // 10 seconds timeout
 
     val gd: GraphicsDevice = GraphicsEnvironment.getLocalGraphicsEnvironment().screenDevices[screenIndex]
     // JFrame 초기화 및 전체화면 설정
@@ -93,7 +93,7 @@ fun main(args: Array<String>) {
     } catch (e: Exception) {
         BufferedImage(1, 1, BufferedImage.TYPE_INT_ARGB).apply {
             createGraphics().apply {
-                color = Color.WHITE
+                color = Color.BLUE
                 fillRect(0, 0, width, height)
                 dispose()
             }
