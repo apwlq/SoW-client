@@ -55,7 +55,7 @@ fun main(args: Array<String>) {
     val port = 4446
     val mousePort = 4447
     val bufferSize = 65000
-    val defaultImagePath = "./splash.png"
+    val defaultImagePath = "./splash1.png"
     val imageUpdateTimeout = 3600_000L // 10 seconds timeout
 
     val gd: GraphicsDevice = GraphicsEnvironment.getLocalGraphicsEnvironment().screenDevices[screenIndex]
